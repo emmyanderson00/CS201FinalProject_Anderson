@@ -1,10 +1,7 @@
 ## CS 201 Final Project: Book Application
 ### Project Description
 
-This is a Book Application system that stores and keeps track of books a user has read. The program runs in the command line and gives the user a menu of options to choose from.
-It works with printed books and audiobooks.
-For every book, the program stores the title, author, genre, and book type. Printed books also store the number of pages. Audiobooks store the duration in minutes.
-The program can also calculate the cost of each book based on the project requirements.
+This is a Book Application system that stores and keeps track of books a user has read. The program runs in the command line and gives the user a menu of options to choose from. It works with printed books and audiobooks. For every book, the program stores the title, author, genre, and book type. Printed books also store the number of pages. Audiobooks store the duration in minutes. The program can also calculate the cost of each book based on the project requirements.
 Printed books cost 0.50 per page. Audiobooks cost 0.25 per minute. The program also allows the user to add books, search books, sort books, display statistics, display last N book records, save book data to a file, and load book data from a file.
 
 ### How to Run the Program
@@ -15,11 +12,11 @@ To compile the program, use:
 
 javac *.java
 
-To run the main command-line program, use:
+To run the main command line program, use:
 
 java Main
 
-I also included a separate test file. To run the test case file, use:
+I also included a separate test file that demonstrates all of the required functions. To run the test case file, use:
 
 java TestCase
 
@@ -29,33 +26,33 @@ The test case file loads the provided sample text file, adds the extra required 
 
 **The project includes these files:**
 
-BookInterface.java  
-Book.java   
-PrintedBook.java    
-AudioBook.java  
-BookApplication.java    
-FileManager.java    
-Main.java   
-TestCase.java   
-sample TXT Project file.txt   
-README.md   
-UML diagram file    
+- BookInterface.java  
+- Book.java   
+- PrintedBook.java    
+- AudioBook.java  
+- BookApplication.java    
+- FileManager.java    
+- Main.java   
+- TestCase.java   
+- sample TXT Project file.txt   
+- README.md   
+- UML diagram file    
 
 **The command-line menu allows the user to:**
 
-Add a printed book  
-Add an audiobook    
-Display all books   
-Search books    
-Sort books  
-Display statistics  
-Display the last 6 books added overall  
-Display the last 3 printed books added  
-Display the last 3 audiobooks added 
-Save books to a file    
-Load books from a file  
-Clear the current book list   
-Exit the program    
+- Add a printed book  
+- Add an audiobook    
+- Display all books   
+- Search books    
+- Sort books  
+- Display statistics  
+- Display the last 6 books added overall  
+- Display the last 3 printed books added  
+- Display the last 3 audiobooks added 
+- Save books to a file    
+- Load books from a file  
+- Clear the current book list   
+- Exit the program    
 
 After each menu option, the program asks the user if they want to continue by entering Y or N. I used this format because it is similar to the command line menu examples from class.
 
@@ -95,20 +92,20 @@ BookApplication manages the main list of books. It stores the books in an ArrayL
 
 BookApplication handles:
 
-Adding books    
-Searching by title  
-Searching by author 
-Searching by genre  
-Searching by book type  
-Sorting books   
-Displaying all books    
-Displaying statistics   
-Displaying the last 6 books added   
-Displaying the last 3 printed books 
-Displaying the last 3 audiobooks    
-Saving books    
-Loading books   
-Clearing the book list      
+- Adding books    
+- Searching by title  
+- Searching by author 
+- Searching by genre  
+- Searching by book type  
+- Sorting books   
+- Displaying all books    
+- Displaying statistics   
+- Displaying the last 6 books added   
+- Displaying the last 3 printed books 
+- Displaying the last 3 audiobooks    
+- Saving books    
+- Loading books   
+- Clearing the book list      
 
 **FileManager**
 
@@ -148,24 +145,24 @@ The project demonstrates the required test cases from the project instructions.
 
 **The test cases include:**
 
-Loading the provided sample text file   
-Adding more than 8 books    
-Displaying the last 6 books added overall   
-Displaying the last 3 printed books added   
-Displaying the last 3 audiobooks added  
-Testing a printed book with 0 pages 
-Testing an audiobook with 0 minutes 
-Verifying that 0 pages gives a cost of 0.00 
-Verifying that 0 minutes gives a cost of 0.00   
-Testing a 1000 page printed book    
-Testing a 2000 minute audiobook 
-Verifying the cost calculations for large values    
-Counting books by genre 
-Searching by genre  
-Searching by author 
-Saving books to a file  
-Clearing the book list  
-Loading books back from a saved file    
-Verifying that the loaded data is still correct 
+- Loading the provided sample text file     
+- Adding more than 8 books      
+- Displaying the last 6 books added overall     
+- Displaying the last 3 printed books added     
+- Displaying the last 3 audiobooks added    
+- Testing a printed book with 0 pages   
+- Testing an audiobook with 0 minutes   
+- Verifying that 0 pages gives a cost of 0.00   
+- Verifying that 0 minutes gives a cost of 0.00     
+- Testing a 1000 page printed book      
+- Testing a 2000 minute audiobook   
+- Verifying the cost calculations for large values      
+- Counting books by genre   
+- Searching by genre    
+- Searching by author   
+- Saving books to a file    
+- Clearing the book list    
+- Loading books back from a saved file      
+- Verifying that the loaded data is still correct   
 
 ### Thank you!
