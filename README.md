@@ -5,7 +5,7 @@ This is a Book Application system that stores and keeps track of books a user ha
 It works with printed books and audiobooks.
 For every book, the program stores the title, author, genre, and book type. Printed books also store the number of pages. Audiobooks store the duration in minutes.
 The program can also calculate the cost of each book based on the project requirements.
-Printed books cost 0.50 per page. Audiobooks cost 0.25 per minute. The program also allows the user to add books, search books, sort books, display statistics, display last-N book records, save book data to a file, and load book data from a file.
+Printed books cost 0.50 per page. Audiobooks cost 0.25 per minute. The program also allows the user to add books, search books, sort books, display statistics, display last N book records, save book data to a file, and load book data from a file.
 
 ### How to Run the Program
 
@@ -25,7 +25,7 @@ java TestCase
 
 The test case file loads the provided sample text file, adds the extra required edge case and large value books, and displays the required project outputs.
 
-### Files Included
+### Design Explanation
 
 **The project includes these files:**
 
@@ -39,9 +39,7 @@ Main.java
 TestCase.java   
 sample TXT Project file.txt   
 README.md   
-TEST_CASES.md   
 UML diagram file    
-Program Features    
 
 **The command-line menu allows the user to:**
 
@@ -56,21 +54,16 @@ Display the last 3 printed books added
 Display the last 3 audiobooks added 
 Save books to a file    
 Load books from a file  
-Clear the current book list 
+Clear the current book list   
 Exit the program    
 
-After each menu option, the program asks the user if they want to continue by entering Y or N. I used this format because it is similar to the command-line menu examples from class.
+After each menu option, the program asks the user if they want to continue by entering Y or N. I used this format because it is similar to the command line menu examples from class.
 
 ### File Loading and Saving
 
-The program can load book information from a text file. I used the sample text file that was provided with the project:
+The program can load book information from a text file. I used the sample text file that was provided with the project: sample TXT Project file.txt.
 
-sample TXT Project file.txt
-
-The program can also save the current list of books to another text file. For example, the user can save the books as:
-
-saved_books.txt
-
+The program can also save the current list of books to another text file. For example, the user can save the books as: saved_books.txt.
 
 
 **BookInterface**
@@ -82,7 +75,7 @@ The interface includes methods for displaying all books, counting the number of 
 
 Book is an abstract class. I made it abstract because printed books and audiobooks share common information, but a general book does not know exactly how to calculate its cost.
 The Book class stores the common information for all books: Title, Author, Genre, Book type.   
-The Book class also has an abstract getCost method. This means every subclass of Book must provide its own cost formula.
+The Book class also has an abstract getCost() method. This means every subclass of Book must provide its own cost formula.
 
 **PrintedBook**
 
@@ -123,8 +116,7 @@ FileManager handles file input and output. It reads book data from a text file a
 
 **Main**
 
-Main contains the command-line interface. It displays the menu, gets user input, and calls the correct methods from BookApplication.
-The menu uses numbered options and asks the user if they want to continue after each action.
+Main contains the command line interface. It displays the menu, gets user input, and calls the correct methods from BookApplication. The menu uses numbered options and asks the user if they want to continue after each action.
 
 **TestCase**
 
@@ -143,12 +135,12 @@ Inheritance is used because PrintedBook and AudioBook both extend the Book class
 
 **Polymorphism**
 
-Polymorphism is used because the program stores both printed books and audiobooks in one ArrayList of Book objects. When the program calls getCost, Java runs the correct version of the method depending on whether the object is a PrintedBook or an AudioBook.
+Polymorphism is used because the program stores both printed books and audiobooks in one ArrayList of Book objects. When the program calls getCost(), Java runs the correct version of the method depending on whether the object is a PrintedBook or an AudioBook.
 
 **Abstraction**
 
-Abstraction is used with the abstract Book class and the abstract getCost method.
-The Book class says that every book must have a cost, but it does not provide one general formula. The subclasses decide how cost is calculated.
+Abstraction is used with the abstract Book class and the abstract getCost() method.
+The Book class says that every book must have a cost, but it does not provide one general formula. The subclasses decide how cost is calculated. This is important since the price varies by book type.
 
 ### Test Cases Demonstrated
 
