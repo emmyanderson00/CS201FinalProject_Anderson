@@ -37,7 +37,7 @@ BookApplication.java
 FileManager.java    
 Main.java   
 TestCase.java   
-sample TXT Project file.txt 
+sample TXT Project file.txt   
 README.md   
 TEST_CASES.md   
 UML diagram file    
@@ -82,7 +82,6 @@ The interface includes methods for displaying all books, counting the number of 
 
 Book is an abstract class. I made it abstract because printed books and audiobooks share common information, but a general book does not know exactly how to calculate its cost.
 The Book class stores the common information for all books: Title, Author, Genre, Book type.   
-
 The Book class also has an abstract getCost method. This means every subclass of Book must provide its own cost formula.
 
 **PrintedBook**
@@ -120,8 +119,7 @@ Clearing the book list
 
 **FileManager**
 
-FileManager handles file input and output. It reads book data from a text file and writes book data to a text file.
-I separated file handling into its own class so that BookApplication does not have to contain all of the file reading and writing code.
+FileManager handles file input and output. It reads book data from a text file and writes book data to a text file. I separated file handling into its own class so that BookApplication does not have to contain all of the file reading and writing code.
 
 **Main**
 
@@ -137,29 +135,22 @@ The main user program is Main.java. TestCase.java is just for testing and demons
 
 **Encapsulation**
 
-Encapsulation is used by making the main fields private and using getter and setter methods.
+Encapsulation is used by making the main fields private and using getter and setter methods. For example, the title, author, genre, book type, pages, and duration are not directly changed from  outside the class. Other classes use methods to access or update those values.
 
-For example, the title, author, genre, book type, pages, and duration are not directly changed from outside the class. Other classes use methods to access or update those values.
+**Inheritance**
 
-Inheritance
+Inheritance is used because PrintedBook and AudioBook both extend the Book class. This means PrintedBook and AudioBook reuse the common fields and methods from Book, while also adding their own specific fields and methods.
 
-Inheritance is used because PrintedBook and AudioBook both extend the Book class.
+**Polymorphism**
 
-This means PrintedBook and AudioBook reuse the common fields and methods from Book, while also adding their own specific fields and methods.
+Polymorphism is used because the program stores both printed books and audiobooks in one ArrayList of Book objects. When the program calls getCost, Java runs the correct version of the method depending on whether the object is a PrintedBook or an AudioBook.
 
-Polymorphism
-
-Polymorphism is used because the program stores both printed books and audiobooks in one ArrayList of Book objects.
-
-When the program calls getCost, Java runs the correct version of the method depending on whether the object is a PrintedBook or an AudioBook.
-
-Abstraction
+**Abstraction**
 
 Abstraction is used with the abstract Book class and the abstract getCost method.
-
 The Book class says that every book must have a cost, but it does not provide one general formula. The subclasses decide how cost is calculated.
 
-Test Cases Demonstrated
+### Test Cases Demonstrated
 
 The project demonstrates the required test cases from the project instructions.
 
@@ -185,6 +176,4 @@ Clearing the book list
 Loading books back from a saved file    
 Verifying that the loaded data is still correct 
 
-### Notes
-
-I made the project a command-line application because that matches the style of several examples from class. I used a simple numbered menu and a Y/N continue question after each action. I also added comments in the code to explain the main sections and where the object-oriented programming concepts are being used.
+### Thank you!
